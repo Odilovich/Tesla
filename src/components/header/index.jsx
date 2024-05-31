@@ -1,16 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Container } from "../containers";
 import Logo from "../../assets/images/logo.svg";
 import "./style.scss";
 
 const index = () => {
+  const navigate = useNavigate()
   return (
     <header className="">
       <Container>
         <nav className="flex items-center justify-between h-[80px]">
-          <NavLink to="#">
-            <img src={Logo} alt="logo" />
-          </NavLink>
+            <img className=" cursor-pointer hover:scale-110 duration-150" onClick={()=>navigate("/")} src={Logo} alt="logo" />
           <ul className="flex items-center gap-[30px] ml-[180px]">
             <li className="text-[#fff] border-2 border-transparent font-medium">
               <NavLink
